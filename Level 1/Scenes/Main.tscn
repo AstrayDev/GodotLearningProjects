@@ -13,7 +13,7 @@ size = Vector3(40, 0.1, 40)
 transform = Transform3D(1, 0, 0, 0, -0.528542, 0.848907, 0, -0.848907, -0.528542, -4.21039, 1.84987, 5.31659)
 
 [node name="Gobot" parent="." instance=ExtResource("1_hy0p7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426388, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426, 0)
 
 [node name="Ground" type="StaticBody3D" parent="."]
 

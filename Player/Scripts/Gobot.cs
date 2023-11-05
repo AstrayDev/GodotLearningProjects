@@ -14,17 +14,18 @@ public partial class Gobot : CharacterBody3D
     private bool canDoubleJump = true;
     private Marker3D pivot;
     private AnimationPlayer anim;
+    private Node3D camera;
 
     public override void _Ready()
     {
         pivot = GetNode<Marker3D>("Pivot");
         anim = GetNode<AnimationPlayer>("Pivot/GobotSkin/gobot/AnimationPlayer");
+        camera = GetNode<Node3D>("CameraRoot");
     }
 
     public override void _PhysicsProcess(double delta)
     {
         var velocity = Velocity;
-
         // Assigns input to vector values to then be change the transform
         var inputDir = Input.GetVector("move_right", "move_left", "move_down", "move_up");
         var direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
