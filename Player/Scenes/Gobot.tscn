@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfjnn8dfpnby0"]
+
+[ext_resource type="Script" path="res://Player/Scripts/Gobot.cs" id="1_h8f28"]
+[ext_resource type="PackedScene" uid="uid://cy36aygvs66pn" path="res://Player/Model/gobot/gobot_skin.tscn" id="1_pdayb"]
+[ext_resource type="Script" path="res://Player/Scripts/Camera.cs" id="3_oknyq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_600ih"]
+radius = 0.383492
+height = 1.42152
+
+[node name="Gobot" type="CharacterBody3D"]
+script = ExtResource("1_h8f28")
+
+[node name="Pivot" type="Marker3D" parent="."]
+
+[node name="GobotSkin" parent="Pivot" instance=ExtResource("1_pdayb")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0144277, 0.690968, 0.0145914)
+shape = SubResource("CapsuleShape3D_600ih")
+
+[node name="CameraRoot" type="Node3D" parent="."]
+script = ExtResource("3_oknyq")
+
+[node name="Horizontal" type="Node3D" parent="CameraRoot"]
+
+[node name="Vertical" type="Node3D" parent="CameraRoot/Horizontal"]
+
+[node name="Camera" type="Camera3D" parent="CameraRoot/Horizontal/Vertical"]
+transform = Transform3D(-1, -2.99003e-08, 8.21506e-08, 0, 0.939693, 0.34202, -8.74228e-08, 0.34202, -0.939693, 0, 2.11845, -3.65937)
