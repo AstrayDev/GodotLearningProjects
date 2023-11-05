@@ -28,7 +28,7 @@ public partial class Gobot : CharacterBody3D
         var velocity = Velocity;
         // Assigns input to vector values to then be change the transform
         var inputDir = Input.GetVector("move_right", "move_left", "move_down", "move_up");
-        var direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
+        var direction = (camera.Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
 
         // If input is detected change to velocity to match input direction
         if (direction != Vector3.Zero)
