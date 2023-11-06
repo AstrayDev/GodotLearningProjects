@@ -37,7 +37,7 @@ public partial class Gobot : CharacterBody3D
             velocity.Z = direction.Z * speed;
 
             // Chnges the player model rotation based on direction
-            pivot.LookAt(Position - direction, Vector3.Up);
+            pivot.LookAt(Position - new Vector3(direction.X, 0, direction.Z), Vector3.Up);
 
             anim.Play("Run");
         }

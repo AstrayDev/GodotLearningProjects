@@ -29,5 +29,6 @@ public partial class Camera : Node3D
 		camRotV = Mathf.Clamp(camRotV, minCamRot, maxCamRot);
 
 		RotationDegrees = new Vector3(camRotV, camRotH, 0);
+
 	}
 }
