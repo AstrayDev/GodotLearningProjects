@@ -5,7 +5,7 @@ public partial class Camera : Node3D
 	private float camRotV = 0.0f;
 	private float camRotH = 0.0f;
 	private float minCamRot = -55.0f;
-	private float maxCamRot = 75.0f;
+	private float maxCamRot = 45.0f;
 
 	public override void _Input(InputEvent @event)
 	{
@@ -29,5 +29,6 @@ public partial class Camera : Node3D
 		camRotV = Mathf.Clamp(camRotV, minCamRot, maxCamRot);
 
 		RotationDegrees = new Vector3(camRotV, camRotH, 0);
+
 	}
 }

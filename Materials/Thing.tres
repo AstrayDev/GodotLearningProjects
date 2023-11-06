@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bmw8pf2sirflh"]
+
+[resource]
+blend_mode = 1
+no_depth_test = true
+albedo_color = Color(0.713726, 0.752941, 0.780392, 1)
+metallic = 0.46
+roughness = 0.13
+emission_enabled = true
+emission_energy_multiplier = 1.07
+ao_enabled = true
+ao_light_affect = 0.3
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.3
+refraction_enabled = true

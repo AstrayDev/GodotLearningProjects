@@ -9,6 +9,8 @@ radius = 0.383492
 height = 1.42152
 
 [node name="Gobot" type="CharacterBody3D"]
+collision_mask = 15
+floor_max_angle = 1.58825
 script = ExtResource("1_h8f28")
 
 [node name="Pivot" type="Marker3D" parent="."]
@@ -27,4 +29,4 @@ script = ExtResource("3_oknyq")
 [node name="Vertical" type="Node3D" parent="CameraRoot/Horizontal"]
 
 [node name="Camera" type="Camera3D" parent="CameraRoot/Horizontal/Vertical"]
-transform = Transform3D(-1, -2.99003e-08, 8.21506e-08, 0, 0.939693, 0.34202, -8.74228e-08, 0.34202, -0.939693, 0, 2.11845, -3.65937)
+transform = Transform3D(-1, 2.99003e-08, -8.21506e-08, 0, 0.939693, 0.34202, 8.74228e-08, 0.34202, -0.939693, 0, 2.3, -3.2)
