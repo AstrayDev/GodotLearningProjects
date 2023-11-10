@@ -16,16 +16,21 @@ public partial class Camera : Node3D
 		}
 	}
 
-	private float camH;
-	private float camV;
+	// private float camH;
+	private Node3D camera;
 	public override void _Ready()
 	{
-		camH = GetNode<Node3D>("Horizontal").RotationDegrees.Y;
-		camV = GetNode<Node3D>("Horizontal/Vertical").RotationDegrees.X;
+		camera = GetNode<Node3D>("Camera");
 	}
 
 	public override void _Process(double delta)
 	{
+		if (Input.IsKeyPressed(Key.Key1))
+			Input.MouseMode = Input.MouseModeEnum.Captured;
+
+		if (Input.IsKeyPressed(Key.Key2))
+			Input.MouseMode = Input.MouseModeEnum.Visible;
+
 		camRotV = Mathf.Clamp(camRotV, minCamRot, maxCamRot);
 
 		RotationDegrees = new Vector3(camRotV, camRotH, 0);
