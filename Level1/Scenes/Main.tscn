@@ -1,13 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4c67usopin2p"]
+[gd_scene load_steps=5 format=3 uid="uid://b4c67usopin2p"]
 
 [ext_resource type="PackedScene" uid="uid://bfjnn8dfpnby0" path="res://Player/Scenes/Gobot.tscn" id="1_y7t0i"]
 [ext_resource type="Environment" uid="uid://ciefmkjhtdxlq" path="res://SkyBox/Enviroment.tres" id="2_7nu2j"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://cps4yedrhd7qr" path="res://Level1/Scenes/Level.tscn" id="3_0vv7b"]
+=======
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j4o84"]
+size = Vector3(40, 0.1, 40)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_n45hu"]
+>>>>>>> 57cd34a6821e550e2e088406243fca623cb5c8e0
 
 [node name="Main" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+<<<<<<< HEAD
 transform = Transform3D(-0.144795, -0.249514, 0.957485, 0.988457, -0.0800748, 0.128611, 0.0445801, 0.965055, 0.258228, -4.21039, 1.84987, 5.31659)
+=======
+transform = Transform3D(0.151502, 0.522441, -0.839108, 0.988457, -0.0800754, 0.128611, -2.71194e-09, -0.848907, -0.528542, -4.21039, 1.84987, 5.31659)
+>>>>>>> 57cd34a6821e550e2e088406243fca623cb5c8e0
 
 [node name="Gobot" parent="." instance=ExtResource("1_y7t0i")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.0459463, 0)
@@ -16,5 +28,18 @@ speed = 3.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_7nu2j")
 
+<<<<<<< HEAD
 [node name="CyclopsBlocks" parent="." instance=ExtResource("3_0vv7b")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+=======
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_j4o84")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("PlaneMesh_n45hu")
+skeleton = NodePath("")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_7nu2j")
+>>>>>>> 57cd34a6821e550e2e088406243fca623cb5c8e0
