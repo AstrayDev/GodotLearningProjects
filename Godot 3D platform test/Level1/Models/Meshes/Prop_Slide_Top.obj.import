@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b07jlasg1ehmk"
+path="res://.godot/imported/Prop_Slide_Top.obj-947df5e700c582edd9d6df7d3973c6c8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Slide_Top.obj-947df5e700c582edd9d6df7d3973c6c8.mesh"]
+
+source_file="res://Level1/Models/Meshes/Prop_Slide_Top.obj"
+dest_files=["res://.godot/imported/Prop_Slide_Top.obj-947df5e700c582edd9d6df7d3973c6c8.mesh", "res://.godot/imported/Prop_Slide_Top.obj-947df5e700c582edd9d6df7d3973c6c8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

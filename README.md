@@ -1,2 +1,3 @@
-# GodotLearningProjects
-A list of godot projects I've worked on for learning
+# GODOT Learing projects
+
+#### A list of godot projects I've made for learning purposes

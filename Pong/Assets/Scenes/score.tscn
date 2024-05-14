@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://mdalwboyhtlo"]
+
+[ext_resource type="FontFile" uid="uid://35r1jimx8lsc" path="res://Assets/Fonts/VT323/VT323-Regular.ttf" id="1_empqn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ytw3m"]
+font = ExtResource("1_empqn")
+font_size = 125
+
+[node name="Label" type="Label"]
+offset_left = 189.0
+offset_top = 59.0
+offset_right = 246.0
+offset_bottom = 199.0
+text = "0"
+label_settings = SubResource("LabelSettings_ytw3m")
+horizontal_alignment = 1
+vertical_alignment = 1

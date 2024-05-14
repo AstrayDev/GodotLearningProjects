@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5ysw1oudvi5u"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Dotted_Line.gd" id="1_x42ep"]
+[ext_resource type="PackedScene" uid="uid://bcuy2oiye6x7v" path="res://Assets/Scenes/player_paddle.tscn" id="2_o66tp"]
+[ext_resource type="PackedScene" uid="uid://dm7x62nrghwqe" path="res://Assets/Scenes/enemy_paddle.tscn" id="3_mg1sm"]
+[ext_resource type="PackedScene" uid="uid://2v1if2dr6e0e" path="res://Assets/Scenes/ball.tscn" id="4_bmmme"]
+[ext_resource type="Script" path="res://Assets/Scripts/Score.gd" id="5_42alk"]
+[ext_resource type="PackedScene" uid="uid://mdalwboyhtlo" path="res://Assets/Scenes/score.tscn" id="5_s0u36"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6lj06"]
+a = Vector2(575, -5)
+b = Vector2(-577, -2)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_sg4l6"]
+a = Vector2(-7, 2)
+b = Vector2(1156, 1)
+
+[node name="Main" type="Node2D"]
+
+[node name="BackGround" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 644.0
+
+[node name="BGColor" type="ColorRect" parent="BackGround"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_x42ep")
+
+[node name="PlayerPaddle" parent="." groups=["Paddles"] instance=ExtResource("2_o66tp")]
+position = Vector2(1053, 312)
+
+[node name="EnemyPaddle" parent="." groups=["Paddles"] instance=ExtResource("3_mg1sm")]
+position = Vector2(106, 318)
+
+[node name="Ball" parent="." groups=["Ball"] instance=ExtResource("4_bmmme")]
+position = Vector2(532, 338)
+scale = Vector2(0.3, 0.3)
+
+[node name="Scores" type="Node2D" parent="."]
+script = ExtResource("5_42alk")
+
+[node name="Player_Score" parent="Scores" instance=ExtResource("5_s0u36")]
+offset_left = 899.0
+offset_top = 68.0
+offset_right = 956.0
+offset_bottom = 208.0
+
+[node name="Enemy_Score" parent="Scores" instance=ExtResource("5_s0u36")]
+
+[node name="Vert_Bounds" type="Area2D" parent="."]
+position = Vector2(7, 0)
+
+[node name="Top_Bound" type="CollisionShape2D" parent="Vert_Bounds"]
+position = Vector2(577, 10)
+shape = SubResource("SegmentShape2D_6lj06")
+
+[node name="Bottom_Bound" type="CollisionShape2D" parent="Vert_Bounds"]
+position = Vector2(1, 638)
+shape = SubResource("SegmentShape2D_sg4l6")
+
+[connection signal="body_entered" from="Vert_Bounds" to="Ball" method="_on_vert_bounds_body_entered"]

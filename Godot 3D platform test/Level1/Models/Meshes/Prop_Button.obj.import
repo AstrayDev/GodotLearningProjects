@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://w8kvbmk0kct2"
+path="res://.godot/imported/Prop_Button.obj-900a99939cba892a46eff9cf023d40ae.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Button.obj-900a99939cba892a46eff9cf023d40ae.mesh"]
+
+source_file="res://Level1/Models/Meshes/Prop_Button.obj"
+dest_files=["res://.godot/imported/Prop_Button.obj-900a99939cba892a46eff9cf023d40ae.mesh", "res://.godot/imported/Prop_Button.obj-900a99939cba892a46eff9cf023d40ae.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

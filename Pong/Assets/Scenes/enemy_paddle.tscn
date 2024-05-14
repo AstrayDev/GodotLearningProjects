@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm7x62nrghwqe"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Enemy_Paddle.gd" id="1_ji11m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5k3be"]
+size = Vector2(1.4, 5.625)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j555t"]
+
+[node name="Node2D" type="CharacterBody2D"]
+scale = Vector2(10, 16)
+script = ExtResource("1_ji11m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4.76837e-08, 0)
+shape = SubResource("RectangleShape2D_5k3be")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(1.5, 5.5)
+mesh = SubResource("BoxMesh_j555t")
