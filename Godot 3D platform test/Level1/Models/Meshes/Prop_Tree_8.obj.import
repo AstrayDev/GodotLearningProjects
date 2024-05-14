@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c8eoemfp5g784"
+path="res://.godot/imported/Prop_Tree_8.obj-ea825f4b8539799f3dbe3def2837ce79.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Tree_8.obj-ea825f4b8539799f3dbe3def2837ce79.mesh"]
+
+source_file="res://Level1/Models/Meshes/Prop_Tree_8.obj"
+dest_files=["res://.godot/imported/Prop_Tree_8.obj-ea825f4b8539799f3dbe3def2837ce79.mesh", "res://.godot/imported/Prop_Tree_8.obj-ea825f4b8539799f3dbe3def2837ce79.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bn0os4j81ua0e"
+path="res://.godot/imported/Prop_Pipe_Straight.obj-0718e54649ccf6ef85a099c93bc91cf1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Pipe_Straight.obj-0718e54649ccf6ef85a099c93bc91cf1.mesh"]
+
+source_file="res://Level1/Models/Meshes/Prop_Pipe_Straight.obj"
+dest_files=["res://.godot/imported/Prop_Pipe_Straight.obj-0718e54649ccf6ef85a099c93bc91cf1.mesh", "res://.godot/imported/Prop_Pipe_Straight.obj-0718e54649ccf6ef85a099c93bc91cf1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

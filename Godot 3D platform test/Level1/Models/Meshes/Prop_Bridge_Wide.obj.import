@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://by1keimhgafbl"
+path="res://.godot/imported/Prop_Bridge_Wide.obj-f33204dab38818df420e07a8fdd54e65.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Bridge_Wide.obj-f33204dab38818df420e07a8fdd54e65.mesh"]
+
+source_file="res://Level1/Models/Meshes/Prop_Bridge_Wide.obj"
+dest_files=["res://.godot/imported/Prop_Bridge_Wide.obj-f33204dab38818df420e07a8fdd54e65.mesh", "res://.godot/imported/Prop_Bridge_Wide.obj-f33204dab38818df420e07a8fdd54e65.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
