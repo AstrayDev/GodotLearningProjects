@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dr7a02j47gkc4"
+path="res://.godot/imported/Terrain_Grass_Flat.obj-f26244a0485ee304b8e9d70e1d449e55.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Terrain_Grass_Flat.obj-f26244a0485ee304b8e9d70e1d449e55.mesh"]
+
+source_file="res://Level1/Models/Meshes/Terrain_Grass_Flat.obj"
+dest_files=["res://.godot/imported/Terrain_Grass_Flat.obj-f26244a0485ee304b8e9d70e1d449e55.mesh", "res://.godot/imported/Terrain_Grass_Flat.obj-f26244a0485ee304b8e9d70e1d449e55.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

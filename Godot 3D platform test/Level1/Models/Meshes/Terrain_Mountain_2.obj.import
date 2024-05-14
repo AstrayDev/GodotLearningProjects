@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dp73cc632b0s0"
+path="res://.godot/imported/Terrain_Mountain_2.obj-c035975c5e1c63db541fee8b2a7f2e2c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Terrain_Mountain_2.obj-c035975c5e1c63db541fee8b2a7f2e2c.mesh"]
+
+source_file="res://Level1/Models/Meshes/Terrain_Mountain_2.obj"
+dest_files=["res://.godot/imported/Terrain_Mountain_2.obj-c035975c5e1c63db541fee8b2a7f2e2c.mesh", "res://.godot/imported/Terrain_Mountain_2.obj-c035975c5e1c63db541fee8b2a7f2e2c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dixo7tip26w3v"
+path="res://.godot/imported/Prop_Slide_Mid.obj-d710da0f75bfe56ad1f0c48ec3e2d370.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Slide_Mid.obj-d710da0f75bfe56ad1f0c48ec3e2d370.mesh"]
+
+source_file="res://Level1/Models/Meshes/Prop_Slide_Mid.obj"
+dest_files=["res://.godot/imported/Prop_Slide_Mid.obj-d710da0f75bfe56ad1f0c48ec3e2d370.mesh", "res://.godot/imported/Prop_Slide_Mid.obj-d710da0f75bfe56ad1f0c48ec3e2d370.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

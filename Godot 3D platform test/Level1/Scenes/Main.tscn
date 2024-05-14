@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4c67usopin2p"]
+
+[ext_resource type="PackedScene" uid="uid://bfjnn8dfpnby0" path="res://Player/Scenes/Gobot.tscn" id="1_y7t0i"]
+[ext_resource type="Environment" uid="uid://ciefmkjhtdxlq" path="res://SkyBox/Enviroment.tres" id="2_7nu2j"]
+[ext_resource type="PackedScene" uid="uid://bmwrpi5pv8mv8" path="res://Level1/Scenes/level1.tscn" id="3_sjqtu"]
+[ext_resource type="PackedScene" uid="uid://cm02uoxys8mop" path="res://Level1/Scenes/Level Objects/Coin.tscn" id="4_rrhp7"]
+[ext_resource type="PackedScene" uid="uid://bt50uro5cskml" path="res://Level1/Scenes/Hud.tscn" id="5_h3lwe"]
+
+[node name="Main" type="Node3D"]
+
+[node name="Gobot" parent="." instance=ExtResource("1_y7t0i")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.393286, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_7nu2j")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.0497796, 0.973699, 0.222332, -0.227468, -0.205705, 0.951811, 0.972512, -0.0979541, 0.211245, 0, 0, 0)
+
+[node name="Level 1" parent="." instance=ExtResource("3_sjqtu")]
+
+[node name="HUD" parent="." instance=ExtResource("5_h3lwe")]
+
+[node name="Coins" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0953219, 0)
+
+[node name="Coin" parent="Coins" instance=ExtResource("4_rrhp7")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -5.73041, 0.353313, 0.00232744)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("4_rrhp7")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -3.72505, 0.353313, 0.00232744)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("4_rrhp7")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -1.96754, 0.353313, 0.00232744)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("4_rrhp7")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -15.6502, 2.15291, -3.73734)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("4_rrhp7")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -17.4547, 2.15291, -2.54335)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("4_rrhp7")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -18.9224, 2.15291, -3.85132)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("4_rrhp7")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -17.3334, 2.15291, -5.65687)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("4_rrhp7")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -18.6149, 2.15291, -5.65687)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("4_rrhp7")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -15.9821, 2.15291, -5.65687)
+
+[node name="Coin11" parent="Coins" instance=ExtResource("4_rrhp7")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -16.1439, 2.15291, -2.61077)
+
+[node name="Coin12" parent="Coins" instance=ExtResource("4_rrhp7")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -18.8257, 2.15291, -2.61077)

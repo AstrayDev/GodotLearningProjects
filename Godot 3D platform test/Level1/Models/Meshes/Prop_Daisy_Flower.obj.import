@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bsqi246k2pjfv"
+path="res://.godot/imported/Prop_Daisy_Flower.obj-b6c03230b5db6bffb3de1d375edc819d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Daisy_Flower.obj-b6c03230b5db6bffb3de1d375edc819d.mesh"]
+
+source_file="res://Level1/Models/Meshes/Prop_Daisy_Flower.obj"
+dest_files=["res://.godot/imported/Prop_Daisy_Flower.obj-b6c03230b5db6bffb3de1d375edc819d.mesh", "res://.godot/imported/Prop_Daisy_Flower.obj-b6c03230b5db6bffb3de1d375edc819d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

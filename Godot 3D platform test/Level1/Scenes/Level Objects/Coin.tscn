@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm02uoxys8mop"]
+
+[ext_resource type="Script" path="res://Level1/Models/Scripts/Coin.cs" id="1_cfjya"]
+[ext_resource type="ArrayMesh" uid="uid://gb77avsfb7xu" path="res://Level1/Models/Meshes/Prop_Coin.obj" id="1_rbgk6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qrw7j"]
+radius = 0.585624
+
+[node name="Coin" type="Area3D"]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_cfjya")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_qrw7j")
+
+[node name="PropCoin" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_rbgk6")
+
+[connection signal="body_entered" from="." to="." method="On_Body_Entered"]

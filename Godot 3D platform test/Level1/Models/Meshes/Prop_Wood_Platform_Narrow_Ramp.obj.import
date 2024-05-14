@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://oqdvqx5mw0p8"
+path="res://.godot/imported/Prop_Wood_Platform_Narrow_Ramp.obj-5fb731e160ac70acae0b38ddb08e8202.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Wood_Platform_Narrow_Ramp.obj-5fb731e160ac70acae0b38ddb08e8202.mesh"]
+
+source_file="res://Level1/Models/Meshes/Prop_Wood_Platform_Narrow_Ramp.obj"
+dest_files=["res://.godot/imported/Prop_Wood_Platform_Narrow_Ramp.obj-5fb731e160ac70acae0b38ddb08e8202.mesh", "res://.godot/imported/Prop_Wood_Platform_Narrow_Ramp.obj-5fb731e160ac70acae0b38ddb08e8202.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

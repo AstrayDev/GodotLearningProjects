@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bs4qqh5ekysht"
+path="res://.godot/imported/Prop_Block_2x3.obj-4e9515093bcc9fb84e6ce39682be18bd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Block_2x3.obj-4e9515093bcc9fb84e6ce39682be18bd.mesh"]
+
+source_file="res://Level1/Models/Meshes/Prop_Block_2x3.obj"
+dest_files=["res://.godot/imported/Prop_Block_2x3.obj-4e9515093bcc9fb84e6ce39682be18bd.mesh", "res://.godot/imported/Prop_Block_2x3.obj-4e9515093bcc9fb84e6ce39682be18bd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
