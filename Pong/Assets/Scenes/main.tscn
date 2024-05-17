@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5ysw1oudvi5u"]
+[gd_scene load_steps=10 format=3 uid="uid://c5ysw1oudvi5u"]
 
+[ext_resource type="PackedScene" uid="uid://plcwis343tfs" path="res://Assets/Scenes/game_over.tscn" id="1_qs0eg"]
 [ext_resource type="Script" path="res://Assets/Scripts/Dotted_Line.gd" id="1_x42ep"]
 [ext_resource type="PackedScene" uid="uid://bcuy2oiye6x7v" path="res://Assets/Scenes/player_paddle.tscn" id="2_o66tp"]
 [ext_resource type="PackedScene" uid="uid://dm7x62nrghwqe" path="res://Assets/Scenes/enemy_paddle.tscn" id="3_mg1sm"]
@@ -22,6 +23,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1153.0
 offset_bottom = 644.0
+mouse_filter = 2
 
 [node name="BGColor" type="ColorRect" parent="BackGround"]
 layout_mode = 1
@@ -30,6 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("1_x42ep")
 
@@ -43,17 +46,6 @@ position = Vector2(106, 318)
 position = Vector2(532, 338)
 scale = Vector2(0.3, 0.3)
 
-[node name="Scores" type="Node2D" parent="."]
-script = ExtResource("5_42alk")
-
-[node name="Player_Score" parent="Scores" instance=ExtResource("5_s0u36")]
-offset_left = 899.0
-offset_top = 68.0
-offset_right = 956.0
-offset_bottom = 208.0
-
-[node name="Enemy_Score" parent="Scores" instance=ExtResource("5_s0u36")]
-
 [node name="Vert_Bounds" type="Area2D" parent="."]
 position = Vector2(7, 0)
 
@@ -65,4 +57,44 @@ shape = SubResource("SegmentShape2D_6lj06")
 position = Vector2(1, 638)
 shape = SubResource("SegmentShape2D_sg4l6")
 
+[node name="Ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1161.0
+offset_bottom = 635.0
+mouse_filter = 2
+
+[node name="game_over" parent="Ui" instance=ExtResource("1_qs0eg")]
+process_mode = 3
+layout_mode = 1
+
+[node name="Scores" type="Control" parent="Ui"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("5_42alk")
+
+[node name="Player_Score" parent="Ui/Scores" instance=ExtResource("5_s0u36")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -235.0
+offset_top = 60.0
+offset_right = -185.0
+offset_bottom = 188.0
+grow_horizontal = 0
+
+[node name="Enemy_Score" parent="Ui/Scores" instance=ExtResource("5_s0u36")]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 60.0
+offset_right = 247.0
+offset_bottom = 200.0
+
 [connection signal="body_entered" from="Vert_Bounds" to="Ball" method="_on_vert_bounds_body_entered"]
+[connection signal="game_over" from="Ui/Scores" to="Ui/game_over" method="_on_scores_game_over"]

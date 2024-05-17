@@ -24,21 +24,24 @@ label_settings = SubResource("LabelSettings_f0pwd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BGcolor" type="ColorRect" parent="Title"]
-z_index = -1
-z_as_relative = false
-layout_mode = 1
-offset_right = 1154.0
-offset_bottom = 651.0
-color = Color(0, 0, 0, 1)
-
 [node name="start_button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 467.0
 offset_top = 313.0
 offset_right = 675.0
 offset_bottom = 358.0
+theme_override_fonts/font = ExtResource("1_764wr")
+theme_override_font_sizes/font_size = 30
 text = "Start Game"
 script = ExtResource("2_jyium")
+
+[node name="BGcolor" type="ColorRect" parent="."]
+z_index = -1
+z_as_relative = false
+layout_mode = 1
+offset_right = 1154.0
+offset_bottom = 651.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [connection signal="button_down" from="start_button" to="start_button" method="_on_button_down"]

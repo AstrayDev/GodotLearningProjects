@@ -1,7 +1,9 @@
-extends Node2D
+extends Control
+
+signal game_over
 
 @onready var screen_size = get_viewport_rect().size
-@onready var ball = $"../Ball"
+@onready var ball = $"../../Ball"
 @onready var player_score = $Player_Score
 @onready var enemy_score = $Enemy_Score
 
@@ -24,3 +26,9 @@ func _process(_delta):
 		player_score.text = "%d" % p_score
 
 		ball.Reset_Position()
+
+	if p_score == 10:
+		game_over.emit()
+
+	elif e_score == 10:
+		game_over.emit()

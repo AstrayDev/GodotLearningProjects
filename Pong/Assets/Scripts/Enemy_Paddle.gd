@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
-const MOVE_SPEED = 500
-const ACCEL_SPEED = MOVE_SPEED * 6
+const MOVE_SPEED = 310
 const SCREEN_BORDER_OFFSET = 50
 
 @onready var screen_size := get_viewport_rect().size
@@ -13,9 +12,13 @@ func _ready():
 	position = start_pos
 	pass
 
-func _process(_delta: float):
-	position.y = ball.position.y
+func _physics_process(_delta: float):
+	if position.y < ball.position.y:
+		velocity = Vector2(0, 1) * MOVE_SPEED
+
+	elif position.y > ball.position.y:
+		velocity = Vector2(0, -1) * MOVE_SPEED
+
 	position.y = clamp(position.y, SCREEN_BORDER_OFFSET, screen_size.y - SCREEN_BORDER_OFFSET)
 
 	move_and_collide(velocity * _delta)
-	pass
