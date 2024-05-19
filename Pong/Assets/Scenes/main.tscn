@@ -44,7 +44,7 @@ position = Vector2(106, 318)
 
 [node name="Ball" parent="." groups=["Ball"] instance=ExtResource("4_bmmme")]
 position = Vector2(532, 338)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.2, 0.2)
 
 [node name="Vert_Bounds" type="Area2D" parent="."]
 position = Vector2(7, 0)

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const MOVE_SPEED = 310
+const MOVE_SPEED = 330
 const SCREEN_BORDER_OFFSET = 50
 
 @onready var screen_size := get_viewport_rect().size
