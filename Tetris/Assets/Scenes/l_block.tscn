@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfea0mkmnlvsi"]
+
+[ext_resource type="Texture2D" uid="uid://o65tb64h0ol3" path="res://Assets/Images/Blocks/Orange.png" id="1_g1fou"]
+
+[node name="L_block" type="Node2D"]
+
+[node name="Orange" type="Sprite2D" parent="."]
+texture = ExtResource("1_g1fou")
+
+[node name="Orange2" type="Sprite2D" parent="."]
+position = Vector2(0, 63)
+texture = ExtResource("1_g1fou")
+
+[node name="Orange3" type="Sprite2D" parent="."]
+position = Vector2(63, 0)
+texture = ExtResource("1_g1fou")
+
+[node name="Orange4" type="Sprite2D" parent="."]
+position = Vector2(126, 0)
+texture = ExtResource("1_g1fou")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(33, 93, 31, 29, 156, 30, 156, -32, -32, -35, -33, 89)

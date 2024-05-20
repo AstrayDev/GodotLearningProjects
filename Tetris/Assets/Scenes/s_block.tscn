@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://5h5emcsi0od3"]
+
+[ext_resource type="Texture2D" uid="uid://b3n1fxfhid2jf" path="res://Assets/Images/Blocks/Green.png" id="1_qyeg8"]
+
+[node name="S_block" type="Node2D"]
+
+[node name="Green" type="Sprite2D" parent="."]
+position = Vector2(0, 63)
+texture = ExtResource("1_qyeg8")
+
+[node name="Green2" type="Sprite2D" parent="."]
+position = Vector2(63, 63)
+texture = ExtResource("1_qyeg8")
+
+[node name="Green3" type="Sprite2D" parent="."]
+position = Vector2(63, 0)
+texture = ExtResource("1_qyeg8")
+
+[node name="Green4" type="Sprite2D" parent="."]
+position = Vector2(126, 0)
+texture = ExtResource("1_qyeg8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-30, 32, 29, 31, 30, -34, 154, -34, 159, 31, 96, 33, 92, 94, -33, 96)

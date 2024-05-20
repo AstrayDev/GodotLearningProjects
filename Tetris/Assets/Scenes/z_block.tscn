@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://f5nwmqwfcch2"]
+
+[ext_resource type="Texture2D" uid="uid://c0owetntg5km0" path="res://Assets/Images/Blocks/Red.png" id="1_fbmx2"]
+
+[node name="Z_block" type="Node2D"]
+
+[node name="Red" type="Sprite2D" parent="."]
+texture = ExtResource("1_fbmx2")
+
+[node name="Red2" type="Sprite2D" parent="."]
+position = Vector2(63, 0)
+texture = ExtResource("1_fbmx2")
+
+[node name="Red3" type="Sprite2D" parent="."]
+position = Vector2(63, 63)
+texture = ExtResource("1_fbmx2")
+
+[node name="Red4" type="Sprite2D" parent="."]
+position = Vector2(126, 63)
+texture = ExtResource("1_fbmx2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-31, 28, -34, -33, 92, -34, 95, 27, 151, 25, 157, 89, 33, 91, 29, 31)
