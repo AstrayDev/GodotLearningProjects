@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu2plgs8471m6"
-path="res://.godot/imported/Border.png-69b0220765f0c1c8815ebaccaef6daa7.ctex"
+uid="uid://yu4x0uo605vg"
+path="res://.godot/imported/blocks_atlas.png-f621c9ffe4f2d5cec53013b6406de5df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Border/Border.png"
-dest_files=["res://.godot/imported/Border.png-69b0220765f0c1c8815ebaccaef6daa7.ctex"]
+source_file="res://Assets/Images/Atlas/blocks_atlas.png"
+dest_files=["res://.godot/imported/blocks_atlas.png-f621c9ffe4f2d5cec53013b6406de5df.ctex"]
 
 [params]
 

@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://cml532qb738re"]
-
-[ext_resource type="Script" path="res://Assets/Scripts/block.gd" id="1_6qcjy"]
-[ext_resource type="PackedScene" uid="uid://c6vvgerbmm7o2" path="res://Assets/Scenes/i_block.tscn" id="2_nve27"]
-
-[node name="block" type="CharacterBody2D"]
-script = ExtResource("1_6qcjy")
-
-[node name="I_block" parent="." instance=ExtResource("2_nve27")]
