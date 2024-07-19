@@ -12,9 +12,9 @@ const o_block = [Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 0), Vector2i(1, 1)]
 
 var current_cells = []
 var old_cells = []
-var test_cells = []
 var current_position: Vector2i
 var current_color: Vector2i
+var test_position: Vector2i
 var spawn_position = Vector2i(34, 9)
 
 func set_rand_piece():
