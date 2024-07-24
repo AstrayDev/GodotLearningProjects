@@ -1,8 +1,6 @@
 extends TileMap
 
 var piece = Piece.new()
-var left_bounds = Vector2i(29, 0)
-var right_bounds = Vector2i(40, 0)
 
 func _ready():
 	piece.set_rand_piece()
@@ -18,8 +16,17 @@ func _process(_delta):
 	if Input.is_action_just_pressed("move_left"):
 		move(Vector2i.LEFT)
 
-	if Input.is_action_just_pressed("ui_accept"):
-		piece.rotate_piece()
+	if Input.is_action_just_pressed("turn_left"):
+		piece.old_cells = piece.current_cells
+		for pos in piece.old_cells:
+			erase_cell(0, pos)
+			
+		piece.rotate_left()
+
+		for i in piece.current_cells:
+			set_cell(0, i, 0, piece.current_color)
+
+	print(piece.current_cells)
 
 func spawn_piece():
 	var spawn_pos = []
@@ -36,7 +43,6 @@ func move(dir: Vector2i):
 	var new_cells = []
 	piece.old_cells = piece.current_cells # assign last known valid position
 
-	# deletes old cells
 	for pos in piece.old_cells:
 		erase_cell(0, pos)
 
