@@ -56,7 +56,7 @@ func rotate_piece(dir: int): # dir is used to decided which direction to rotate 
 
 	for i in rotation_cells.size():
 		if dir == 0:
-			new_x = rotation_cells[i].y * - 1
+			new_x = rotation_cells[i].y * -1
 			new_y = rotation_cells[i].x
 			new_rotation_cells.append(Vector2i(new_x, new_y))
 
@@ -66,5 +66,29 @@ func rotate_piece(dir: int): # dir is used to decided which direction to rotate 
 			new_rotation_cells.append(Vector2i(new_x, new_y))
 	
 	rotation_cells = new_rotation_cells
+
 	for i in current_cells.size():
 		current_cells[i] = current_position + rotation_cells[i]
+		
+	wall_kick(current_cells)
+
+
+func wall_kick(cells: Array):
+	var kick_amount = 0
+	
+	for i in cells.size():
+		if cells[i].x < 29 || cells[i].x > 39 || cells[i].y < 9 || cells[i].y > 30:
+			kick_amount += 1
+
+	for i in cells.size():
+		if cells[i].x < 29:
+			cells[i].x += kick_amount 
+
+		elif cells[i].x > 39:
+			cells[i].x -= kick_amount 
+
+		elif cells[i].y < 9:
+			cells[i].y += kick_amount 
+		
+		elif cells[i].y > 30:
+			cells[i].y -= kick_amount 
