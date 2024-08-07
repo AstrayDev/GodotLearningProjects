@@ -100,10 +100,10 @@ func reset_piece():
 
 func check_rows():	
 	var rows_to_erase = []
-	for y in range(30, 9, -1): # border height
+	for y in range(30, 10, -1): # border height
 		var row = []
 		var row_full = true
-		for x in range(29, 39): # border width
+		for x in range(29, 40): # border width
 			row.append(Vector2i(x, y))
 		for i in row:
 			if get_cell_source_id(0, i) == -1:
@@ -118,7 +118,7 @@ func check_rows():
 
 func erase_rows(rows: Array):
 	for row in rows:
-		for x in range(29, 39):
+		for x in range(29, 40):
 			var cell_pos = Vector2i(x, row)
 			erase_cell(0, cell_pos)
 
@@ -126,7 +126,7 @@ func push_down_rows(rows: Array):
 	var amount_to_push = rows.size()
 	for row in rows:
 		for y in range(row - 1, 9, -1): # Start from the row above the erased row
-			for x in range(29, 39):
+			for x in range(29, 40):
 				var cell_pos = Vector2i(x, y)
 				var below_pos = Vector2i(x, y + amount_to_push)
 				var color = get_cell_atlas_coords(0, cell_pos)
