@@ -1,7 +1,5 @@
 extends Node
 
-class_name Piece
-
 const i_block = [Vector2i( - 1, 0), Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0)]
 const l_block = [Vector2i( - 1, 0), Vector2i( - 1, 1), Vector2i(0, 0), Vector2i(1, 0)]
 const j_block = [Vector2i( - 1, 0), Vector2i(0, 0), Vector2i(1, 0), Vector2i(1, 1)]
@@ -14,40 +12,46 @@ var current_cells = []
 var old_cells = []
 var test_cells = []
 var rotation_cells = []
-var blocktype_cells = []
+var piecetype_cells = []
 var current_position: Vector2i
 var current_color: Vector2i
 var test_position: Vector2i
 var spawn_position = Vector2i(35, 9)
+var preview_spawn_position = Vector2i(48, 10)
+var bag_base = [0, 1, 2, 3, 4, 5, 6]
+var bag = bag_base.duplicate()
 
 func set_rand_piece():
-	var rand_num = randi() % 7
+	var rand_num = randi() % bag_base.size()
 
 	match rand_num:
 		0:
-			blocktype_cells += i_block
+			piecetype_cells += i_block
 			current_color = Vector2i(1, 1)
 		1:
-			blocktype_cells += l_block
+			piecetype_cells += l_block
 			current_color = Vector2i(0, 0)
 		2:
-			blocktype_cells += j_block
+			piecetype_cells += j_block
 			current_color = Vector2i(0, 1)
 		3:
-			blocktype_cells += t_block
+			piecetype_cells += t_block
 			current_color = Vector2i(1, 2)
 		4:
-			blocktype_cells += s_block
+			piecetype_cells += s_block
 			current_color = Vector2i(0, 3)
 		5:
-			blocktype_cells += z_block
+			piecetype_cells += z_block
 			current_color = Vector2i(0, 2)
 		6:
-			blocktype_cells += o_block
+			piecetype_cells += o_block
 			current_color = Vector2i(1, 3)
 
-	current_cells = blocktype_cells
-	rotation_cells = blocktype_cells
+	bag.remove_at(rand_num)
+	if bag.size() == 0:
+		bag = bag_base
+	current_cells = piecetype_cells
+	rotation_cells = piecetype_cells
 
 func rotate_piece(dir: int): # dir is used to decided which direction to rotate and I'm just using 0 and 1 to decide
 	var new_x
@@ -89,6 +93,6 @@ func wall_kick(cells: Array):
 
 		elif cells[i].y < 9:
 			cells[i].y += kick_amount 
-		
+
 		elif cells[i].y > 30:
 			cells[i].y -= kick_amount 
