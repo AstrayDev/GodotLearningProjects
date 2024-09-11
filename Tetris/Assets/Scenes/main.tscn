@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8sanbj4m546h"]
+[gd_scene load_steps=6 format=3 uid="uid://b8sanbj4m546h"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/tilemap.gd" id="1_dpe7y"]
 [ext_resource type="Texture2D" uid="uid://yu4x0uo605vg" path="res://Assets/Images/Atlas/blocks_atlas.png" id="1_m87lg"]
+[ext_resource type="PackedScene" uid="uid://bvhnhyj2sinr4" path="res://Assets/Scenes/hud.tscn" id="3_jkrf1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2uke"]
 texture = ExtResource("1_m87lg")
@@ -32,3 +33,5 @@ script = ExtResource("1_dpe7y")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="hud" parent="." instance=ExtResource("3_jkrf1")]

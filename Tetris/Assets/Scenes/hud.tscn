@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvhnhyj2sinr4"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/hud.gd" id="1_6u74r"]
+
+[node name="hud" type="CanvasLayer"]
+script = ExtResource("1_6u74r")
+
+[node name="Control" type="Control" parent="."]
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="score" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 91.0
+offset_right = 401.0
+offset_bottom = 147.0
+theme_override_font_sizes/font_size = 30
+text = "Score: 0"
+
+[node name="preview_text" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 732.0
+offset_top = 109.0
+offset_right = 902.0
+offset_bottom = 163.0
+theme_override_font_sizes/font_size = 25
+text = "Preview Piece:"
+
+[node name="game_over" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 258.0
+offset_right = 647.0
+offset_bottom = 316.0
+theme_override_font_sizes/font_size = 40
+text = "Game Over"

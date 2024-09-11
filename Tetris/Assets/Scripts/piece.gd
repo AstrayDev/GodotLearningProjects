@@ -1,4 +1,4 @@
-extends Node
+class_name Piece extends Node
 
 const i_block = [Vector2i( - 1, 0), Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0)]
 const l_block = [Vector2i( - 1, 0), Vector2i( - 1, 1), Vector2i(0, 0), Vector2i(1, 0)]
@@ -7,6 +7,11 @@ const t_block = [Vector2i( - 1, 0), Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 
 const s_block = [Vector2i( - 1, 1), Vector2i(0, 1), Vector2i(0, 0), Vector2i(1, 0)]
 const z_block = [Vector2i( - 1, 0), Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 1)]
 const o_block = [Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 0), Vector2i(1, 1)]
+
+var blocks = [i_block, l_block, j_block, t_block, s_block, z_block, o_block]
+var bag = blocks.duplicate()
+var colors_base = [Vector2i(1, 1), Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 2), Vector2i(0, 3), Vector2i(0, 2), Vector2i(1, 3)]
+var colors = colors_base.duplicate()
 
 var current_cells = []
 var old_cells = []
@@ -18,38 +23,23 @@ var current_color: Vector2i
 var test_position: Vector2i
 var spawn_position = Vector2i(35, 9)
 var preview_spawn_position = Vector2i(48, 10)
-var bag_base = [0, 1, 2, 3, 4, 5, 6]
-var bag = bag_base.duplicate()
 
 func set_rand_piece():
-	var rand_num = randi() % bag_base.size()
+	var rand_num = randi() % bag.size()
 
-	match rand_num:
-		0:
-			piecetype_cells += i_block
-			current_color = Vector2i(1, 1)
-		1:
-			piecetype_cells += l_block
-			current_color = Vector2i(0, 0)
-		2:
-			piecetype_cells += j_block
-			current_color = Vector2i(0, 1)
-		3:
-			piecetype_cells += t_block
-			current_color = Vector2i(1, 2)
-		4:
-			piecetype_cells += s_block
-			current_color = Vector2i(0, 3)
-		5:
-			piecetype_cells += z_block
-			current_color = Vector2i(0, 2)
-		6:
-			piecetype_cells += o_block
-			current_color = Vector2i(1, 3)
+	piecetype_cells = bag[rand_num]
+	current_color = colors[rand_num]
+
 
 	bag.remove_at(rand_num)
+	colors.remove_at(rand_num)
+
 	if bag.size() == 0:
-		bag = bag_base
+		bag = blocks.duplicate()
+
+	if colors.size() == 0:
+		colors = colors_base.duplicate()
+
 	current_cells = piecetype_cells
 	rotation_cells = piecetype_cells
 
