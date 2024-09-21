@@ -47,7 +47,7 @@ func rotate_piece(dir: int): # dir is used to decided which direction to rotate 
 	var new_x
 	var new_y
 	var new_rotation_cells = []
-
+	
 	for i in rotation_cells.size():
 		if dir == 0:
 			new_x = rotation_cells[i].y * -1

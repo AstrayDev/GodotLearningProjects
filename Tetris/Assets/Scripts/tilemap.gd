@@ -4,13 +4,11 @@ extends TileMap
 
 var current_piece
 var preview_piece
-var game_over_threshhold = 11
+var game_over_threshhold = 10
+var can_rotate = true
 
 func _ready():
-	var timer = get_parent().get_node("Timer")
 	Signalbus.piece_stacked.connect(_on_piece_stacked)
-
-	timer.timeout.connect(_on_timer_timeout)
 	current_piece = spawn_piece(Vector2i(35, 10))
 	preview_piece = spawn_piece(Vector2i(48, 10))
 
@@ -62,7 +60,6 @@ func spawn_piece(offset: Vector2i) -> Node2D:
 	# a bad way of fixing a problem with rotation at the start because the rotation logic uses current_position and will move to origin
 	piece.current_position = piece.current_cells[0]
 
-
 	return piece
 
 func swap_piece(piece_to_swap: Node2D, offset: Vector2i):
@@ -99,6 +96,7 @@ func check_for_gameover():
 			Signalbus.game_over.emit()
 
 func move(dir: Vector2i):
+	can_rotate = true
 	var new_cells = []
 	current_piece.old_cells = current_piece.current_cells # assign last known valid position
 
@@ -124,7 +122,7 @@ func move(dir: Vector2i):
 
 	current_piece.test_cells.clear() # reset test cells for next move
 
-func _on_timer_timeout():
+func _on_piece_timer_timeout():
 		move(Vector2i.DOWN)
 
 func _on_piece_stacked():
@@ -152,18 +150,7 @@ func should_stack_piece() -> bool:
 	return false
 
 func reset_piece():
-	# var t: Array = []
-
 	current_piece = swap_piece(preview_piece, current_piece.spawn_position)
-	# preview_piece = spawn_piece(preview_piece.preview_spawn_position)
-	# preview_piece.set_rand_piece()
-	# for i in preview_piece.current_cells:
-	# 	t.append(i + preview_piece.preview_spawn_position)
-
-	# preview_piece.current_cells = t
-
-	# for i in preview_piece.current_cells:
-	# 	set_cell(0, i, 0, preview_piece.current_color)
 
 	update_preview_piece()
 
@@ -183,15 +170,15 @@ func check_rows():
 	
 	if rows_to_erase.size() > 0:
 		erase_rows(rows_to_erase)
-		push_down_rows(rows_to_erase)
 		
 		Stats.current_score += Stats.calc_score(rows_to_erase.size())
 
-func erase_rows(rows: Array):
+func erase_rows(rows: Array) -> void:
 	for row in rows:
 		for x in range(29, 40):
 			var cell_pos = Vector2i(x, row)
 			erase_cell(0, cell_pos)
+	push_down_rows(rows)	
 
 func push_down_rows(rows: Array):
 	var amount_to_push = rows.size()

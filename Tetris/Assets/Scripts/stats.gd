@@ -12,3 +12,6 @@ func calc_score(lines_cleared: int) -> int:
         score = 100
 
     return score
+
+func reset():
+    current_score = 0
