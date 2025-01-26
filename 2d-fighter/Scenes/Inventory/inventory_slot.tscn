@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmlk0flhurbrx"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/UI/inventory_slot.gd" id="1_mrbt2"]
+
+[node name="InventorySlot" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+script = ExtResource("1_mrbt2")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.483
+anchor_top = 0.469
+anchor_right = 0.504
+anchor_bottom = 0.506
+offset_left = -0.416016
+offset_top = 0.0879822
+offset_right = -0.608093
+offset_bottom = 0.111969
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.018, 1)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="CenterContainer"]
+layout_mode = 2
+
+[connection signal="draw" from="CenterContainer" to="CenterContainer" method="_on_draw"]
+[connection signal="pressed" from="CenterContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,117 @@
+[gd_scene load_steps=16 format=3 uid="uid://c015dvd6amjg"]
+
+[ext_resource type="PackedScene" uid="uid://bq7182mhe1jer" path="res://Scenes/player.tscn" id="1_fi1d0"]
+[ext_resource type="Texture2D" uid="uid://c2n18xolbpoql" path="res://Assets/2 Dungeon Tileset/2 Objects/Tables/1.png" id="2_uj8l6"]
+[ext_resource type="PackedScene" uid="uid://76dmp186pb26" path="res://Scenes/Components/health_manager.tscn" id="3_boh8o"]
+[ext_resource type="Texture2D" uid="uid://blu77wm0weyuf" path="res://Assets/2 Dungeon Tileset/2 Objects/Other/28.png" id="4_rtisf"]
+[ext_resource type="Texture2D" uid="uid://clwq40qlf4gpp" path="res://Assets/2 Dungeon Tileset/3 Animated objects/Chest1_D.png" id="5_l1ikc"]
+[ext_resource type="PackedScene" uid="uid://bpesstp6uv30r" path="res://Scenes/goblin.tscn" id="6_y1qnr"]
+[ext_resource type="PackedScene" uid="uid://dddhillojf1et" path="res://Scenes/torch.tscn" id="7_1ki4k"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vrkqx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2in5x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fsotl"]
+radius = 6.0
+height = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygi0r"]
+atlas = ExtResource("5_l1ikc")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lk24g"]
+atlas = ExtResource("5_l1ikc")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jg1ic"]
+atlas = ExtResource("5_l1ikc")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ij5k0"]
+atlas = ExtResource("5_l1ikc")
+region = Rect2(48, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wsqh4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygi0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lk24g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jg1ic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ij5k0")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_fi1d0")]
+position = Vector2(587, 340)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_vrkqx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(630, 292)
+shape = SubResource("CapsuleShape2D_2in5x")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(631, 293)
+texture = ExtResource("2_uj8l6")
+
+[node name="HealthManager" parent="StaticBody2D" instance=ExtResource("3_boh8o")]
+health = 2
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(535, 314)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("CapsuleShape2D_fsotl")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+texture = ExtResource("4_rtisf")
+
+[node name="HealthManager" parent="StaticBody2D2" instance=ExtResource("3_boh8o")]
+health = 2
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(535, 314)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(18, -37)
+shape = SubResource("CapsuleShape2D_fsotl")
+
+[node name="HealthManager" parent="StaticBody2D3" instance=ExtResource("3_boh8o")]
+health = 10
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D3"]
+position = Vector2(18, -41)
+sprite_frames = SubResource("SpriteFrames_wsqh4")
+animation = &"open"
+
+[node name="Enemy" parent="." instance=ExtResource("6_y1qnr")]
+position = Vector2(466, 363)
+
+[node name="Torch" parent="." instance=ExtResource("7_1ki4k")]
+position = Vector2(624, 382)
+
+[node name="Torch2" parent="." instance=ExtResource("7_1ki4k")]
+position = Vector2(538, 345)
+
+[node name="Torch3" parent="." instance=ExtResource("7_1ki4k")]
+position = Vector2(670, 329)
+
+[node name="Torch4" parent="." instance=ExtResource("7_1ki4k")]
+position = Vector2(592, 290)

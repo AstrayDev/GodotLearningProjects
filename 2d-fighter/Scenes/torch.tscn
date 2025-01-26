@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dddhillojf1et"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/Itmes/Torch/torch.gd" id="1_20eyd"]
+[ext_resource type="PackedScene" uid="uid://bj3et47yupggp" path="res://Scenes/pick_up.tscn" id="1_gaipx"]
+[ext_resource type="Resource" uid="uid://bd67pk52q3ymi" path="res://Scripts/Inventory/Itmes/Torch/torch.tres" id="2_avcxn"]
+[ext_resource type="Texture2D" uid="uid://b0av8ufojmhks" path="res://Assets/2 Dungeon Tileset/2 Objects/Torches/1.png" id="3_bjeup"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5x0p3"]
+size = Vector2(8, 9.2619)
+
+[node name="Torch" type="Node2D" groups=["Item"]]
+script = ExtResource("1_20eyd")
+item = ExtResource("2_avcxn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_bjeup")
+
+[node name="Area2D" parent="." instance=ExtResource("1_gaipx")]
+scale = Vector2(1, 1.68)
+collision_layer = 8
+script = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.130952)
+shape = SubResource("RectangleShape2D_5x0p3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_pick_up_body_entered"]
