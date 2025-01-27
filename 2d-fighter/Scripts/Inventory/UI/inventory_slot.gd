@@ -9,9 +9,12 @@ func _on_draw() -> void:
 func _on_button_pressed() -> void:
 	print(item.name + " Selected")
 #	Allows access to item script for item specific action
-	var script = item.instance_script.new()
-	if script.has_method("action"):
-		script.action.call()
-		script.free()
+	if item.instance_script != null:
+		var script = item.instance_script.new()
+		if script.has_method("action"):
+			script.action.call()
+			script.free()
+		else:
+			print("script is missing an action method")
 	else:
-		print("script is missing action method")
+		print("script is null")

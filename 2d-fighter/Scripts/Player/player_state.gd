@@ -1,4 +1,4 @@
-class_name Player_State extends State
+class_name PlayerState extends State
 
 var player: Player
 

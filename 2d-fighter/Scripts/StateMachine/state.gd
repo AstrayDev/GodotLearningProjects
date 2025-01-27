@@ -1,6 +1,5 @@
 class_name State extends Node
 # This is a base class for all states
-# Also allows for quick access to the player for autocompletion
 
 signal finished(next_state_path: String)
 	

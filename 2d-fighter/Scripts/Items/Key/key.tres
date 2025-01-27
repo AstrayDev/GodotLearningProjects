@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://dw78u2y86f7uh"]
+
+[ext_resource type="Texture2D" uid="uid://blwlw6yqnvrp1" path="res://Assets/2 Dungeon Tileset/2 Objects/Other/15.png" id="1_cdpbc"]
+[ext_resource type="Script" path="res://Scripts/Items/item.gd" id="1_yup4u"]
+[ext_resource type="Resource" uid="uid://buiyuu2tec0p4" path="res://Scripts/Player/Resources/player_stats.tres" id="2_sxh6i"]
+
+[resource]
+script = ExtResource("1_yup4u")
+name = "Key"
+icon = ExtResource("1_cdpbc")
+player_stats = ExtResource("2_sxh6i")

@@ -1,13 +1,10 @@
-extends Player_State
+extends PlayerState
 
 func enter() -> void:
 	player.animation.play("run")
 	
 func action(delta: float) -> void:
 	var input_dir: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down").normalized()
-	
-	player.velocity = input_dir * player.speed * delta
-	player.move_and_collide(player.velocity)
 	
 	if input_dir.x > 0:
 		player.animation.flip_h = true
@@ -16,6 +13,9 @@ func action(delta: float) -> void:
 	if input_dir.x < 0:
 		player.animation.flip_h = false
 		player.direction = Vector2.LEFT
+		
+	player.velocity = input_dir * player.stats.speed * delta
+	player.move_and_collide(player.velocity)
 	
 	if input_dir == Vector2.ZERO:
 		finished.emit("Idle")

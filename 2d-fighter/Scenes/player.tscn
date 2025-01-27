@@ -1,8 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://bq7182mhe1jer"]
+[gd_scene load_steps=31 format=3 uid="uid://bq7182mhe1jer"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_bf6wm"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/statemachine.gd" id="2_5q1bj"]
 [ext_resource type="Resource" uid="uid://dkumgbwg5spbr" path="res://Scenes/Inventory/inventory.tres" id="2_ew7tl"]
+[ext_resource type="Resource" uid="uid://buiyuu2tec0p4" path="res://Scripts/Player/Resources/player_stats.tres" id="3_3o4ak"]
 [ext_resource type="PackedScene" uid="uid://bxkn4t2s1f2dy" path="res://Scenes/Inventory/inventory_menu.tscn" id="3_gangd"]
 [ext_resource type="Script" path="res://Scripts/Player/States/player_idle.gd" id="3_hh5g1"]
 [ext_resource type="Script" path="res://Scripts/Player/States/player_running.gd" id="4_xqnmo"]
@@ -11,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://mij4ij5k42p0" path="res://Assets/1 Characters/2/S_Attack.png" id="6_ssr8e"]
 [ext_resource type="Texture2D" uid="uid://dewfewj40rdob" path="res://Assets/1 Characters/2/S_Walk.png" id="6_xjrji"]
 [ext_resource type="PackedScene" uid="uid://76dmp186pb26" path="res://Scenes/Components/health_manager.tscn" id="9_hfub4"]
-[ext_resource type="Script" path="res://Scripts/attack_box.gd" id="9_v7tvk"]
+[ext_resource type="Script" path="res://Scripts/Player/attack_box.gd" id="9_v7tvk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l4grb"]
 atlas = ExtResource("6_ssr8e")
@@ -139,7 +140,7 @@ process_mode = 1
 collision_mask = 14
 script = ExtResource("1_bf6wm")
 inventory = ExtResource("2_ew7tl")
-speed = 200.0
+stats = ExtResource("3_3o4ak")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -184,7 +185,6 @@ frame_progress = 1.0
 shape = SubResource("CircleShape2D_m3gpq")
 
 [node name="HealthManager" parent="." instance=ExtResource("9_hfub4")]
-health = 3
 
 [node name="AttackBox" type="Area2D" parent="."]
 visible = false

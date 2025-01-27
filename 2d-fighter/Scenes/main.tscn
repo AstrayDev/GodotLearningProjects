@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c015dvd6amjg"]
+[gd_scene load_steps=17 format=3 uid="uid://c015dvd6amjg"]
 
 [ext_resource type="PackedScene" uid="uid://bq7182mhe1jer" path="res://Scenes/player.tscn" id="1_fi1d0"]
 [ext_resource type="Texture2D" uid="uid://c2n18xolbpoql" path="res://Assets/2 Dungeon Tileset/2 Objects/Tables/1.png" id="2_uj8l6"]
@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://blu77wm0weyuf" path="res://Assets/2 Dungeon Tileset/2 Objects/Other/28.png" id="4_rtisf"]
 [ext_resource type="Texture2D" uid="uid://clwq40qlf4gpp" path="res://Assets/2 Dungeon Tileset/3 Animated objects/Chest1_D.png" id="5_l1ikc"]
 [ext_resource type="PackedScene" uid="uid://bpesstp6uv30r" path="res://Scenes/goblin.tscn" id="6_y1qnr"]
-[ext_resource type="PackedScene" uid="uid://dddhillojf1et" path="res://Scenes/torch.tscn" id="7_1ki4k"]
+[ext_resource type="PackedScene" uid="uid://dddhillojf1et" path="res://Scenes/Items/torch.tscn" id="7_1ki4k"]
+[ext_resource type="PackedScene" uid="uid://dfh6fmn0858la" path="res://Scenes/Items/key.tscn" id="8_qf2a1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vrkqx"]
 
@@ -70,7 +71,6 @@ position = Vector2(631, 293)
 texture = ExtResource("2_uj8l6")
 
 [node name="HealthManager" parent="StaticBody2D" instance=ExtResource("3_boh8o")]
-health = 2
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(535, 314)
@@ -83,7 +83,6 @@ shape = SubResource("CapsuleShape2D_fsotl")
 texture = ExtResource("4_rtisf")
 
 [node name="HealthManager" parent="StaticBody2D2" instance=ExtResource("3_boh8o")]
-health = 2
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2(535, 314)
@@ -94,7 +93,6 @@ position = Vector2(18, -37)
 shape = SubResource("CapsuleShape2D_fsotl")
 
 [node name="HealthManager" parent="StaticBody2D3" instance=ExtResource("3_boh8o")]
-health = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D3"]
 position = Vector2(18, -41)
@@ -115,3 +113,6 @@ position = Vector2(670, 329)
 
 [node name="Torch4" parent="." instance=ExtResource("7_1ki4k")]
 position = Vector2(592, 290)
+
+[node name="Key" parent="." instance=ExtResource("8_qf2a1")]
+position = Vector2(517, 287)

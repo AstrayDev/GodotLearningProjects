@@ -1,4 +1,4 @@
-extends Player_State
+extends PlayerState
 
 func enter() -> void:
 	player.animation.play("idle")	

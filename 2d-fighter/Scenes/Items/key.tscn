@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfh6fmn0858la"]
+
+[ext_resource type="Script" path="res://Scripts/Items/pick_up.gd" id="1_vndnw"]
+[ext_resource type="Texture2D" uid="uid://blwlw6yqnvrp1" path="res://Assets/2 Dungeon Tileset/2 Objects/Other/15.png" id="2_jvxpr"]
+[ext_resource type="Resource" uid="uid://dw78u2y86f7uh" path="res://Scripts/Items/Key/key.tres" id="2_ro3cx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kq3x5"]
+size = Vector2(8, 6)
+
+[node name="Key" type="Node2D"]
+script = ExtResource("1_vndnw")
+item = ExtResource("2_ro3cx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_jvxpr")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_kq3x5")

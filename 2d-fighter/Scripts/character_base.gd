@@ -1,6 +1,6 @@
-class_name Character_Base extends CharacterBody2D
+class_name CharacterBase extends CharacterBody2D
 
-@export var speed: float
+signal damage_taken
 
 @onready var collision: CollisionShape2D = $CharacterCollision
 @onready var health_manager: HealthManager = $HealthManager
