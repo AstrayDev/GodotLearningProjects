@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bq7182mhe1jer"]
+[gd_scene load_steps=33 format=3 uid="uid://bq7182mhe1jer"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_bf6wm"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/statemachine.gd" id="2_5q1bj"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://dewfewj40rdob" path="res://Assets/1 Characters/2/S_Walk.png" id="6_xjrji"]
 [ext_resource type="PackedScene" uid="uid://76dmp186pb26" path="res://Scenes/Components/health_manager.tscn" id="9_hfub4"]
 [ext_resource type="Script" path="res://Scripts/Player/attack_box.gd" id="9_v7tvk"]
+[ext_resource type="Script" path="res://Scripts/Components/hit_component.gd" id="12_pb6s2"]
+[ext_resource type="PackedScene" uid="uid://cqttxyv4spb62" path="res://Scenes/item_spawner.tscn" id="15_s4c6c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l4grb"]
 atlas = ExtResource("6_ssr8e")
@@ -145,14 +147,7 @@ stats = ExtResource("3_3o4ak")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
-[node name="Inventory" parent="Camera2D" instance=ExtResource("3_gangd")]
-z_index = 2
-offset_left = -23.0
-offset_top = -25.0
-offset_right = 17.0
-offset_bottom = 15.0
-size_flags_horizontal = 6
-metadata/_edit_use_anchors_ = true
+[node name="InventoryMenu" parent="Camera2D" instance=ExtResource("3_gangd")]
 
 [node name="StateText" type="Label" parent="."]
 offset_left = -19.0
@@ -181,8 +176,9 @@ animation = &"attack"
 frame = 3
 frame_progress = 1.0
 
-[node name="CharacterCollision" type="CollisionShape2D" parent="."]
+[node name="HitComponent" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_m3gpq")
+script = ExtResource("12_pb6s2")
 
 [node name="HealthManager" parent="." instance=ExtResource("9_hfub4")]
 
@@ -195,6 +191,8 @@ script = ExtResource("9_v7tvk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox"]
 position = Vector2(17, 0)
 shape = SubResource("RectangleShape2D_kmnb0")
+
+[node name="ItemSpawner" parent="." instance=ExtResource("15_s4c6c")]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/Attack" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="health_depleted" from="HealthManager" to="." method="_on_health_depleted"]

@@ -1,20 +1,17 @@
 class_name InventorySlot extends Control
 
 @onready var button: Button = $CenterContainer/Button
-var item: Item
+@onready var item: Item
+
+# TODO: GET RID OF THE GET_PARENT() CALLS IT'S UGLY
 
 func _on_draw() -> void:
-	print("slot drawn")
-	
+	print(item.name + " in inventory")
+
 func _on_button_pressed() -> void:
-	print(item.name + " Selected")
-#	Allows access to item script for item specific action
+	print(item.get_path() + " Selected")
 	if item.instance_script != null:
-		var script = item.instance_script.new()
-		if script.has_method("action"):
-			script.action.call()
-			script.free()
-		else:
-			print("script is missing an action method")
-	else:
+		item.instance_script.action()
+	else: 
 		print("script is null")
+	get_parent().get_parent().get_parent().inventory.spawn_item.emit(item)

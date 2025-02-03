@@ -28,5 +28,5 @@ size_flags_vertical = 4
 [node name="Button" type="Button" parent="CenterContainer"]
 layout_mode = 2
 
-[connection signal="draw" from="CenterContainer" to="CenterContainer" method="_on_draw"]
+[connection signal="draw" from="." to="." method="_on_draw"]
 [connection signal="pressed" from="CenterContainer/Button" to="." method="_on_button_pressed"]

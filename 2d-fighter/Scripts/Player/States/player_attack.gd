@@ -20,14 +20,10 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 func _on_attack_box_body_entered(body: Node2D) -> void:
 	var anim: AnimatedSprite2D = body.get_node_or_null("AnimatedSprite2D")
-	var health_manager = body.get_node_or_null("HealthManager")
+	var hit_component: HitComponent = body.get_node_or_null("HitComponent")
 	
-	if health_manager:
-		print(body.name + "Hit")
-		health_manager.health -= 1
-		print(health_manager.health)
-	else:
-		print(body.name + "Null")
+	if hit_component:
+		hit_component.hit()
 		
 	if anim:
 		anim.play()

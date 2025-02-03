@@ -19,6 +19,6 @@ func exit() -> void:
 	print("Exiting Chase state")
 	enemy.animation.stop()
 
-func _on_attack_range_box_entered(body: Node2D) -> void:
+func _on_attack_range_box_entered(_body: Node2D) -> void:
 	print("Player in attack range")
 	finished.emit("Attack")
