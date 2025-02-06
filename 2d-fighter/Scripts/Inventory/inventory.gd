@@ -9,3 +9,6 @@ func add_item(item: Item) -> void:
 	
 func get_items() -> Array[Item]:
 	return items
+	
+func remove_item(item: Item) -> void:
+	items.erase(item)

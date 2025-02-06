@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy.gd" id="1_lsow1"]
 [ext_resource type="Script" path="res://Scripts/StateMachine/statemachine.gd" id="2_3dqej"]
 [ext_resource type="Script" path="res://Scripts/Components/hit_component.gd" id="2_rrpr0"]
-[ext_resource type="PackedScene" uid="uid://76dmp186pb26" path="res://Scenes/Components/health_manager.tscn" id="2_vvpe0"]
+[ext_resource type="PackedScene" uid="uid://76dmp186pb26" path="res://Scenes/Components/health_component.tscn" id="2_vvpe0"]
 [ext_resource type="Texture2D" uid="uid://ch87jtniijf3p" path="res://Assets/3 Dungeon Enemies/3/D_Idle.png" id="3_q5kkf"]
 [ext_resource type="Script" path="res://Scripts/Enemies/Goblin/States/goblin_Idle.gd" id="4_bu6hw"]
 [ext_resource type="Script" path="res://Scripts/Enemies/Goblin/States/goblin_chase.gd" id="5_5s8bs"]
@@ -143,13 +143,11 @@ collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_lsow1")
 speed = 50.0
+attack = 3
 
 [node name="HitComponent" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1fvxk")
 script = ExtResource("2_rrpr0")
-
-[node name="HealthManager" parent="." instance=ExtResource("2_vvpe0")]
-health = 3
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("2_3dqej")
@@ -186,6 +184,8 @@ collision_layer = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRangeBox"]
 position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_11tb7")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_vvpe0")]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/Attack" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="AttackBox" to="." method="_on_attack_box_entered"]

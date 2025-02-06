@@ -1,7 +1,5 @@
 class_name PlayerStats extends Resource
 
-@export var speed: float
-@export var max_health: int
-@export var health: int = max_health
-
+var speed: float
+var health: int
 var position: Vector2

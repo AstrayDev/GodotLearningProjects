@@ -4,6 +4,3 @@
 
 [resource]
 script = ExtResource("1_1e008")
-speed = 150.0
-max_health = 3
-health = null
